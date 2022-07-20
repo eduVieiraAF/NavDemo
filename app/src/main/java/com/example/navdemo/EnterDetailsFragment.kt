@@ -48,14 +48,12 @@ class EnterDetailsFragment : Fragment() {
                 ).show()
 
                 else -> {
-                    val bundle = bundleOf(
-                        "name" to name,
-                        "mobile" to mobile.toLong()
-                    )
-
                     findNavController().navigate(
-                        R.id.action_enterDetailsFragment_to_verifyDetailsFragment,
-                        bundle
+                        EnterDetailsFragmentDirections
+                            .actionEnterDetailsFragmentToVerifyDetailsFragment(
+                                name,
+                                mobile.toLong()
+                            )
                     )
                 }
             }
